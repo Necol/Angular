@@ -19,6 +19,6 @@ import { HeroService } from './hero.service';
 })
 
 export class HeroDetailComponent{
-           @Input()   //因为父元素要求被关联的属性为输入属性，input将hero设置为输出属性，这样才能在父元素当成输入属性
+           @Input()   //属性声明为组件的输入属性
             hero:Hero; //这里的Input是装饰器
 }

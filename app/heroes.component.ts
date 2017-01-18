@@ -8,7 +8,7 @@ import {HeroService} from "./hero.service";
 @Component({
   selector: 'my-heroes',
   template: `
-    <h1>{{title}}</h1>
+    
     <h2>My Heroes</h2>
     <ul class="heroes">
       <li *ngFor="let hero of heroes"
@@ -17,7 +17,7 @@ import {HeroService} from "./hero.service";
         <span class="badge">{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
-    <my-hero-detail [hero]="selectedHero"></my-hero-detail>
+    <my-hero-detail [hero]="selectedHero"></my-hero-detail>  
   `,
   styles: [`
     .selected {
@@ -96,6 +96,11 @@ import {HeroService} from "./hero.service";
                      //ngOnInit生命周期钩子，以便在AppComponent激活时获取英雄数据
    };
 }*/
+/*
+<my-hero-detail [hero]="selectedHero"></my-hero-detail>
+  注意，hero是属性绑定的目标 — 它位于等号 (=) 左边方括号中
+Angular 希望我们把目标属性声明为组件的输入属性，否则，Angular 会拒绝绑定，并抛出错误。
+*/
 
 
 export class HeroesComponent implements OnInit {

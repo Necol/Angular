@@ -1,8 +1,10 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
+
 import { AppComponent }  from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
+import { HeroesComponent} from  './heroes.component';
 import {HeroService} from "./hero.service";
 
 
@@ -14,9 +16,11 @@ import {HeroService} from "./hero.service";
   ],
   declarations: [
     AppComponent,
-    HeroDetailComponent //引入内部内容以供随时调用  1主模块通过my-hero-detail引用HeroDetailComponent
-                                            // 2 因为hero.ts不是模块所以不用加载这里，可以直接引用
+    HeroDetailComponent, //引入内部内容以供随时调用  1主模块通过my-hero-detail引用HeroDetailComponent
+    HeroesComponent                                        // 2 因为hero.ts不是模块所以不用加载这里，可以直接引用
   ],
+  providers: [
+    HeroService],
   bootstrap: [ AppComponent ],
 
 })

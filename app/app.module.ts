@@ -1,7 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
-import { RouterModule} from '@angular/router';
+import { AppRoutingModule} from './app-routing.module';
 
 import { AppComponent }  from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
@@ -14,18 +14,8 @@ import {DashBoardComponent} from './dashboard.component';
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,    //  引入外部模块内容 1FormsModule用于引用数据传送NgModul装饰器
-    RouterModule.forRoot([
-      {path:'heroes',
-      component:HeroesComponent
-      },
-      {
-        path: 'dashboard',
-        //redirectTo: '/dashboard',   //我们希望在浏览器的地址栏看到一个好看的 URL，
-        //pathMatch: 'full'         // 比如/dashboard。 记住，浏览器启动时，在地址栏中使用的路径是/。
-        component:DashBoardComponent
-      },
-    ])
+    FormsModule,
+    AppRoutingModule     //  引入外部模块内容 1FormsModule用于引用数据传送NgModul装饰器
   ],
   declarations: [
     AppComponent,
@@ -34,7 +24,7 @@ import {DashBoardComponent} from './dashboard.component';
     DashBoardComponent
   ],
   providers: [
-    HeroService],
+    HeroService], //Angular 会把HeroService注入到DashboardComponent
   bootstrap: [ AppComponent ],
 
 })
